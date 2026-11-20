@@ -1,0 +1,764 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>TerraMind AI | Satellite Intelligence</title>
+
+    <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+
+    <!-- Professional Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">
+                <i class="fa-solid fa-earth-americas"></i>
+            </div>
+            <div>
+                <h1>TerraMind</h1>
+                <span>AI INTELLIGENCE</span>
+            </div>
+        </div>
+
+        <nav class="navigation">
+
+            <button class="nav-item active" data-page="dashboard">
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+            </button>
+
+            <button class="nav-item" data-page="location">
+                <i class="fa-solid fa-location-dot"></i>
+                <span>Location Intelligence</span>
+            </button>
+
+            <button class="nav-item" data-page="weather">
+                <i class="fa-solid fa-cloud-sun-rain"></i>
+                <span>Weather Analytics</span>
+            </button>
+
+            <button class="nav-item" data-page="flood">
+                <i class="fa-solid fa-water"></i>
+                <span>Flood Risk Analysis</span>
+            </button>
+
+            <button class="nav-item" data-page="satellite">
+                <i class="fa-solid fa-satellite"></i>
+                <span>Satellite Intelligence</span>
+            </button>
+
+            <button class="nav-item" data-page="ai">
+                <i class="fa-solid fa-wand-magic-sparkles"></i>
+                <span>AI Analysis</span>
+            </button>
+
+        </nav>
+
+        <div class="sidebar-footer">
+            <div class="system-status">
+                <span class="status-dot"></span>
+                <div>
+                    <strong>System Online</strong>
+                    <small>TerraMind AI v1.0</small>
+                </div>
+            </div>
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN APPLICATION
+    ====================================================== -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+            <div>
+                <p class="breadcrumb">TerraMind AI / Intelligence Platform</p>
+                <h2 id="pageTitle">Intelligence Dashboard</h2>
+            </div>
+
+            <div class="top-status">
+                <div class="live-indicator">
+                    <span></span>
+                    LIVE SYSTEM
+                </div>
+                <div class="date-box" id="currentDate"></div>
+            </div>
+        </header>
+
+
+        <!-- =================================================
+             DASHBOARD PAGE
+        ================================================== -->
+        <section class="page active-page dashboard-page" id="dashboard">
+
+            <div class="hero-overlay"></div>
+
+            <div class="dashboard-content">
+
+                <div class="hero-section">
+
+                    <div class="hero-text">
+                        <div class="eyebrow">
+                            <i class="fa-solid fa-satellite"></i>
+                            EARTH OBSERVATION INTELLIGENCE
+                        </div>
+
+                        <h1>
+                            Understand Earth.<br>
+                            <span>Predict Impact.</span>
+                        </h1>
+
+                        <p>
+                            TerraMind AI combines satellite intelligence,
+                            environmental data, weather analytics and AI-powered
+                            insights to support flood impact assessment.
+                        </p>
+
+                        <div class="hero-actions">
+                            <button class="primary-btn" id="startAnalysis">
+                                Start Analysis
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+
+                            <button class="secondary-btn" data-go="location">
+                                <i class="fa-solid fa-location-crosshairs"></i>
+                                Explore Location
+                            </button>
+                        </div>
+                    </div>
+
+                    <div class="hero-system-card">
+                        <div class="system-card-header">
+                            <span>INTELLIGENCE NETWORK</span>
+                            <i class="fa-solid fa-satellite-dish"></i>
+                        </div>
+
+                        <div class="network-circle">
+                            <i class="fa-solid fa-earth-americas"></i>
+                        </div>
+
+                        <div class="network-status">
+                            <span class="online-dot"></span>
+                            Data Systems Connected
+                        </div>
+                    </div>
+
+                </div>
+
+
+                <div class="stats-grid">
+
+                    <div class="stat-card">
+                        <div class="stat-icon blue">
+                            <i class="fa-solid fa-table-cells-large"></i>
+                        </div>
+                        <div>
+                            <span>GRID CELLS</span>
+                            <h3>121</h3>
+                            <small>India coverage grid</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon green">
+                            <i class="fa-solid fa-satellite"></i>
+                        </div>
+                        <div>
+                            <span>SATELLITE DATA</span>
+                            <h3>2014–2026</h3>
+                            <small>Historical observations</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon orange">
+                            <i class="fa-solid fa-cloud-rain"></i>
+                        </div>
+                        <div>
+                            <span>LIVE WEATHER</span>
+                            <h3>Active</h3>
+                            <small>Real-time monitoring</small>
+                        </div>
+                    </div>
+
+                    <div class="stat-card">
+                        <div class="stat-icon purple">
+                            <i class="fa-solid fa-brain"></i>
+                        </div>
+                        <div>
+                            <span>AI ENGINE</span>
+                            <h3>Ready</h3>
+                            <small>Analysis available</small>
+                        </div>
+                    </div>
+
+                </div>
+
+
+
+                <!-- TERRAMIND FLOOD MONITORING -->
+                <section class="monitoring-section" id="floodAlertsPanel">
+
+                    <div class="monitoring-heading">
+                        <div>
+                            <p class="monitoring-eyebrow">LIVE ENVIRONMENTAL INTELLIGENCE</p>
+                            <h2>Flood Monitoring Center</h2>
+                            <span>Saved assessments from analyzed locations</span>
+                        </div>
+
+                        <button id="refreshFloodAlerts" class="monitoring-refresh">
+                            <i class="fa-solid fa-rotate"></i> Refresh Alerts
+                        </button>
+                    </div>
+
+                    <div class="alert-summary-grid">
+                        <div class="alert-summary-card">
+                            <span>HIGH RISK</span>
+                            <strong id="highAlertCount">0</strong>
+                        </div>
+                        <div class="alert-summary-card">
+                            <span>MODERATE RISK</span>
+                            <strong id="moderateAlertCount">0</strong>
+                        </div>
+                        <div class="alert-summary-card">
+                            <span>LOW RAINFALL RISK</span>
+                            <strong id="lowAlertCount">0</strong>
+                        </div>
+                        <div class="alert-summary-card">
+                            <span>INSUFFICIENT DATA</span>
+                            <strong id="unknownAlertCount">0</strong>
+                        </div>
+                    </div>
+
+                    <div class="monitoring-grid">
+
+                        <div class="monitoring-card">
+                            <div class="monitoring-card-heading">
+                                <h3>India Flood Monitoring Map</h3>
+                                <span id="mapLocationCount">0 analyzed locations</span>
+                            </div>
+
+                            <div id="floodIndiaMap"></div>
+
+                            <div class="map-legend">
+                                <span><i class="legend-dot red"></i> High</span>
+                                <span><i class="legend-dot yellow"></i> Moderate</span>
+                                <span><i class="legend-dot green"></i> Low</span>
+                                <span><i class="legend-dot grey"></i> Insufficient data</span>
+                            </div>
+                        </div>
+
+                        <div class="monitoring-card recent-alerts-card">
+                            <div class="monitoring-card-heading">
+                                <h3>Recent Flood Assessments</h3>
+                                <span id="alertLastUpdated">Waiting for data</span>
+                            </div>
+
+                            <div id="recentFloodAlerts">
+                                <div class="alerts-empty">
+                                    Loading saved assessments...
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <p class="monitoring-disclaimer">
+                        Preliminary rainfall-based assessments only. These results
+                        are not official flood warnings or validated flood forecasts.
+                        GREEN indicates low detected rainfall risk, not confirmed safety.
+                    </p>
+
+                </section>
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             LOCATION PAGE
+        ================================================== -->
+        <section class="page location-page" id="location">
+
+            <div class="page-background-overlay"></div>
+
+            <div class="section-container">
+
+                <div class="section-heading">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <p>GEOGRAPHIC DISCOVERY</p>
+                        <h1>Location Intelligence</h1>
+                        <span>Search and analyze locations across India.</span>
+                    </div>
+                </div>
+
+
+                <div class="search-panel">
+
+                    <div class="search-box">
+                        <i class="fa-solid fa-magnifying-glass"></i>
+
+                        <input
+                            type="text"
+                            id="locationInput"
+                            placeholder="Search a city, district or location..."
+                        >
+
+                        <button id="searchLocation">
+                            Search Location
+                        </button>
+                    </div>
+
+                    <p class="search-help">
+                        Try searching for: Kavali, Chennai, Bengaluru or Hyderabad
+                    </p>
+
+                </div>
+
+
+                <div id="locationLoading" class="loading hidden">
+                    <div class="spinner"></div>
+                    <p>Searching geographic intelligence...</p>
+                </div>
+
+
+                <div class="results-layout">
+
+                    <div class="results-panel">
+
+                        <div class="panel-title">
+                            <h3>Search Results</h3>
+                            <span id="resultCount">0 locations</span>
+                        </div>
+
+                        <div id="locationResults" class="location-results">
+
+                            <div class="empty-state">
+                                <i class="fa-solid fa-map-location-dot"></i>
+                                <h3>Search for a location</h3>
+                                <p>
+                                    Geographic results will appear here.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="selected-location-card">
+
+                        <div class="selected-header">
+                            <span>SELECTED LOCATION</span>
+                            <i class="fa-solid fa-crosshairs"></i>
+                        </div>
+
+                        <div id="selectedLocationContent">
+
+                            <div class="location-placeholder">
+                                <i class="fa-solid fa-earth-asia"></i>
+                                <p>No location selected</p>
+                                <small>
+                                    Select a search result to begin analysis.
+                                </small>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             WEATHER PAGE
+        ================================================== -->
+        <section class="page weather-page" id="weather">
+
+            <div class="page-background-overlay"></div>
+
+            <div class="section-container">
+
+                <div class="section-heading light-heading">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-cloud-sun-rain"></i>
+                    </div>
+
+                    <div>
+                        <p>REAL-TIME ENVIRONMENTAL DATA</p>
+                        <h1>Weather Analytics</h1>
+                        <span>
+                            Live weather intelligence for your selected location.
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="weather-location-bar">
+                    <div>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span id="weatherLocationName">
+                            Select a location first
+                        </span>
+                    </div>
+
+                    <button id="refreshWeather">
+                        <i class="fa-solid fa-rotate"></i>
+                        Refresh Data
+                    </button>
+                </div>
+
+
+                <div id="weatherEmpty" class="weather-empty">
+                    <i class="fa-solid fa-cloud"></i>
+                    <h3>Weather data is waiting</h3>
+                    <p>
+                        Go to Location Intelligence and select a location.
+                    </p>
+                </div>
+
+
+                <div id="weatherContent" class="hidden">
+
+                    <div class="weather-main-card">
+
+                        <div>
+                            <span>CURRENT CONDITIONS</span>
+                            <h2 id="weatherTemperature">--°C</h2>
+                            <p id="weatherCondition">
+                                Waiting for live weather data
+                            </p>
+                        </div>
+
+                        <i class="fa-solid fa-cloud-sun weather-large-icon"></i>
+
+                    </div>
+
+
+                    <div class="weather-grid">
+
+                        <div class="weather-card">
+                            <i class="fa-solid fa-droplet"></i>
+                            <span>Humidity</span>
+                            <strong id="weatherHumidity">--%</strong>
+                        </div>
+
+                        <div class="weather-card">
+                            <i class="fa-solid fa-cloud-rain"></i>
+                            <span>Current Rainfall</span>
+                            <strong id="weatherRain">-- mm</strong>
+                        </div>
+
+                        <div class="weather-card">
+                            <i class="fa-solid fa-calendar-day"></i>
+                            <span>24 Hour Forecast</span>
+                            <strong id="weatherForecast">-- mm</strong>
+                        </div>
+
+                        <div class="weather-card">
+                            <i class="fa-solid fa-clock"></i>
+                            <span>Last Updated</span>
+                            <strong id="weatherTime">--</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             FLOOD PAGE
+        ================================================== -->
+        <section class="page flood-page" id="flood">
+
+            <div class="flood-overlay"></div>
+
+            <div class="section-container">
+
+                <div class="section-heading light-heading">
+                    <div class="section-icon danger">
+                        <i class="fa-solid fa-water"></i>
+                    </div>
+
+                    <div>
+                        <p>ENVIRONMENTAL RISK ASSESSMENT</p>
+                        <h1>Flood Risk Analysis</h1>
+                        <span>
+                            Analyze rainfall, historical events and environmental risk.
+                        </span>
+                    </div>
+                </div>
+
+
+                <div id="floodEmpty" class="analysis-empty">
+                    <i class="fa-solid fa-water"></i>
+                    <h3>Ready for Flood Analysis</h3>
+                    <p>
+                        Select a location to begin an environmental risk assessment.
+                    </p>
+
+                    <button data-go="location" class="primary-btn">
+                        Select Location
+                    </button>
+                </div>
+
+
+                <div id="floodContent" class="hidden">
+
+                    <div class="risk-dashboard">
+
+                        <div class="risk-card">
+
+                            <span>AI RISK ASSESSMENT</span>
+
+                            <div class="risk-circle low" id="riskCircle">
+                                <div>
+                                    <small>RISK LEVEL</small>
+                                    <h2 id="riskLevel">LOW</h2>
+                                </div>
+                            </div>
+
+                            <p id="riskExplanation">
+                                Environmental analysis will appear here.
+                            </p>
+
+                        </div>
+
+
+                        <div class="flood-metrics">
+
+                            <div class="metric-card">
+                                <span>Current Rainfall</span>
+                                <strong id="floodCurrentRain">-- mm</strong>
+                            </div>
+
+                            <div class="metric-card">
+                                <span>24 Hour Forecast</span>
+                                <strong id="floodForecastRain">-- mm</strong>
+                            </div>
+
+                            <div class="metric-card">
+                                <span>Total Rainfall</span>
+                                <strong id="floodTotalRain">-- mm</strong>
+                            </div>
+
+                            <div class="metric-card">
+                                <span>Historical Events</span>
+                                <strong id="historicalCount">--</strong>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="warning-panel">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
+
+                        <div>
+                            <strong>Important Information</strong>
+                            <p id="warningMessage">
+                                This is a prototype analysis and not an official warning.
+                            </p>
+                        </div>
+                    </div>
+
+
+                    <div class="analysis-action">
+                        <button id="runFloodAnalysis" class="primary-btn">
+                            <i class="fa-solid fa-rotate"></i>
+                            Run Latest Analysis
+                        </button>
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             SATELLITE PAGE
+        ================================================== -->
+        <section class="page satellite-page" id="satellite">
+
+            <div class="satellite-overlay"></div>
+
+            <div class="section-container">
+
+                <div class="section-heading light-heading">
+                    <div class="section-icon">
+                        <i class="fa-solid fa-satellite"></i>
+                    </div>
+
+                    <div>
+                        <p>EARTH OBSERVATION ARCHIVE</p>
+                        <h1>Satellite Intelligence</h1>
+                        <span>
+                            Explore historical satellite observations across time.
+                        </span>
+                    </div>
+                </div>
+
+
+                <div id="satelliteEmpty" class="analysis-empty">
+                    <i class="fa-solid fa-satellite"></i>
+                    <h3>Satellite Intelligence Ready</h3>
+                    <p>
+                        Select and analyze a location to view satellite history.
+                    </p>
+                </div>
+
+
+                <div id="satelliteContent" class="hidden">
+
+                    <div class="satellite-summary">
+
+                        <div>
+                            <span>SELECTED GRID</span>
+                            <h2 id="gridId">--</h2>
+                        </div>
+
+                        <div>
+                            <span>OBSERVATION PERIOD</span>
+                            <h2>2014 — 2026</h2>
+                        </div>
+
+                        <div>
+                            <span>DATA SOURCE</span>
+                            <h2>Satellite Archive</h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="satellite-table-panel">
+
+                        <div class="panel-title">
+                            <h3>Historical Observations</h3>
+                            <span>Year-by-year intelligence</span>
+                        </div>
+
+                        <div id="satelliteHistory" class="satellite-history"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+
+        <!-- =================================================
+             AI ANALYSIS PAGE
+        ================================================== -->
+        <section class="page ai-page" id="ai">
+
+            <div class="page-background-overlay"></div>
+
+            <div class="section-container">
+
+                <div class="section-heading">
+                    <div class="section-icon ai-icon">
+                        <i class="fa-solid fa-brain"></i>
+                    </div>
+
+                    <div>
+                        <p>AGENTIC INTELLIGENCE ENGINE</p>
+                        <h1>AI Environmental Analysis</h1>
+                        <span>
+                            Intelligent insights generated from environmental data.
+                        </span>
+                    </div>
+                </div>
+
+
+                <div class="ai-layout">
+
+                    <div class="ai-intro-card">
+
+                        <div class="ai-orb">
+                            <i class="fa-solid fa-wand-magic-sparkles"></i>
+                        </div>
+
+                        <h2>TerraMind AI Agent</h2>
+
+                        <p>
+                            The intelligence engine combines geographic,
+                            weather, historical and flood analysis data to
+                            provide a structured environmental assessment.
+                        </p>
+
+                        <button id="generateAI" class="primary-btn">
+                            Generate AI Insight
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+
+                    </div>
+
+
+                    <div class="ai-output-card">
+
+                        <div class="ai-output-header">
+                            <div>
+                                <span>AI INTELLIGENCE REPORT</span>
+                                <h3>Environmental Assessment</h3>
+                            </div>
+
+                            <i class="fa-solid fa-sparkles"></i>
+                        </div>
+
+                        <div id="aiOutput" class="ai-output">
+
+                            <div class="empty-ai">
+                                <i class="fa-solid fa-brain"></i>
+                                <p>
+                                    Select a location and generate an
+                                    intelligence report.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+
+    <!-- TOAST MESSAGE -->
+    <div id="toast" class="toast"></div>
+
+
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="app.js"></script>
+
+</body>
+</html>

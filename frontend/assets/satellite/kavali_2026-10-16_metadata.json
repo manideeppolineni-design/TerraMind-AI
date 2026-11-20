@@ -1,0 +1,12 @@
+{
+    "location": "Kavali",
+    "acquisition_date": "2026-10-16",
+    "satellite": "Sentinel-1",
+    "collection": "COPERNICUS/S1_GRD",
+    "system_index": "S1D_IW_GRDH_1SDV_20261016T003036_20261016T003101_005033_009838_FCC5",
+    "orbit_pass": "DESCENDING",
+    "relative_orbit": 92,
+    "platform": "D",
+    "image_type": "Radar backscatter preview",
+    "flood_classification": "Not performed"
+}
