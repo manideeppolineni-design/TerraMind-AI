@@ -60,3 +60,24 @@ dist/
 .config/earthengine/
 
 /data/raw/geography/tamil_nadu/extracted/vb_soi_tn.GeoJSON
+
+# Environment and secrets
+.env
+.env.*
+!.env.example
+
+# Python environment
+.venv/
+__pycache__/
+*.pyc
+
+# Large datasets and generated satellite data
+data/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Temporary files
+*.log
