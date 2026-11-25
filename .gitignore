@@ -81,3 +81,9 @@ data/
 
 # Temporary files
 *.log
+.env
+venv/
+.venv/
+__pycache__/
+*.pyc
+data/raw/geography/tamil_nadu/extracted/vb_soi_tn.GeoJSON
