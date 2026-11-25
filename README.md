@@ -1,4 +1,5 @@
-﻿# 🌍 TerraMind AI
+
+# 🌍 TerraMind AI
 ### Agentic Satellite Intelligence and Flood Impact Analysis
 
 TerraMind AI is an AI-powered geospatial intelligence platform designed to analyze satellite imagery, identify potential flood-affected regions, and generate geographic impact assessments using satellite data, GIS technologies, and intelligent AI agents.
@@ -56,38 +57,38 @@ TerraMind AI is an AI-powered geospatial intelligence platform designed to analy
 ## 🏗️ System Architecture
 
 ```text
-              USER
-               |
-               v
-       TERRAMIND AI FRONTEND
-          HTML / CSS / JS
-               |
-               v
-          FASTAPI BACKEND
-               |
-       +-------+--------+
-       |                |
-       v                v
- SATELLITE DATA     GEOSPATIAL DATA
- Sentinel-1         Rasterio
- Google Earth       GeoPandas
- Engine             PostGIS
-       |                |
-       +-------+--------+
-               |
-               v
-       FLOOD IMPACT ENGINE
-               |
-               v
-         AI AGENT LAYER
-       LangGraph + RAG
-               |
-               v
-        OLLAMA / LLAMA
-               |
-               v
-      GEOGRAPHIC IMPACT
-           REPORT
+                 USER
+                   |
+                   v
+          TERRAMIND AI FRONTEND
+             HTML / CSS / JS
+                   |
+                   v
+            FASTAPI BACKEND
+                   |
+          +--------+--------+
+          |                 |
+          v                 v
+    SATELLITE DATA     GEOSPATIAL DATA
+    Sentinel-1         Rasterio
+    Google Earth       GeoPandas
+    Engine             PostGIS
+          |                 |
+          +--------+--------+
+                   |
+                   v
+          FLOOD IMPACT ENGINE
+                   |
+                   v
+             AI AGENT LAYER
+              LangGraph + RAG
+                   |
+                   v
+              OLLAMA / LLAMA
+                   |
+                   v
+           GEOGRAPHIC IMPACT
+                 REPORT
 ```
 
 ## 📂 Project Structure
@@ -120,7 +121,7 @@ TerraMind-AI/
 ### 1. Clone the repository
 
 ```bash
-git clone https://github.com/YOUR-USERNAME/TerraMind-AI.git
+git clone https://github.com/manideeppolineni-design/TerraMind-AI.git
 cd TerraMind-AI
 ```
 
@@ -176,7 +177,7 @@ Frontend URL:
 
 http://localhost:5500
 
-### 7. AI model configuration
+### 7. AI Model Configuration
 
 TerraMind AI uses Ollama with the Llama 3.2 model.
 
